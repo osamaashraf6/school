@@ -12,16 +12,35 @@ class Person < Nameable
   end
 
   def is_of_age?
-    @age >= 18
+    @age.to_i >= 18
   end
 
   def can_use_services?
-    @parent_permission || is_of_age?
+    is_of_age? || @parent_permission
   end
 
   def correct_name
     @name
   end
-end
 
+
+  def rent_book(book, date)
+    rental = Rental.new(self, book, date)
+    @rentals << rental
+    book.rentals << rental
+    rental
+  end
+
+  def return_book(rental, date)
+    rental.return_date = date
+  end
+
+  def rented_books
+    @rentals.map { |rental| rental.book }
+  end
+
+  def late_rentals
+    @rentals.select { |rental| rental.return_date.nil? && Date.today > rental.date + 7 }
+  end
+end
 
