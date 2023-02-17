@@ -1,19 +1,21 @@
+# here is the calling of the classes
 require_relative 'person'
+require_relative 'classRoom'
 
 class Student < Person
-  attr_reader :classroom 
+  attr_reader :classroom
 
-  def initialize(age, classroom, name: 'Unknown', parent_permission: true)
-    super(age, name: name, parent_permission: parent_permission)
-    @classroom = classroom
+  def initialize(id, age, classroom, name = 'unknown', parent_permission: true)
+    super(id, age, name, parent_permission: parent_permission)
+    @classroom = Classroom.new(classroom)
   end
 
   def play_hooky
-    '¯\\_(ツ)_/¯'.encode('utf-8')
+    '¯\(ツ)/¯'
   end
 
   def classroom=(classroom)
     @classroom = classroom
-    classroom.students << self
+    classroom.students << self unless classroom.students.include?(self)
   end
 end
