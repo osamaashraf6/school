@@ -25,7 +25,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [TDD project] <a name="about-project"></a>
+# 📖 [school project] <a name="about-project"></a>
 
 > In this project I will implement a class with some methods, but I will do it by doing test-driven development (TDD). The idea is to write tests first and then the code. This will be verified in our commits history, so it is important to use the proper sequence.
 
