@@ -1,7 +1,6 @@
 require_relative '.././student'
 require_relative '.././person'
 
-
 describe Student do
   before :each do
     @student = Student.new(1, 22, 'Arabic', 'Osama', parent_permission: false)
@@ -11,23 +10,23 @@ describe Student do
     @student.should be_a Person
   end
 
-  it "the student of  ids ought to be 1" do
+  it 'the student of  ids ought to be 1' do
     @student.id.should eq 1
   end
 
-  it "the student of age ought to 22" do
+  it 'the student of age ought to 22' do
     @student.age.should eq 22
   end
 
-  it "the student of classroom ought to Arabic" do
+  it 'the student of classroom ought to Arabic' do
     @student.classroom.label.should eql 'Arabic'
   end
 
-  it "the student of name ought to Osama" do
+  it 'the student of name ought to Osama' do
     @student.name.should eql 'Osama'
   end
 
-  it "the student of parent permissions ought to false" do
+  it 'the student of parent permissions ought to false' do
     @student.parent_permission.should eq false
   end
 
