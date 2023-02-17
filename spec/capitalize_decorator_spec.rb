@@ -7,7 +7,7 @@ RSpec.describe CapitalizeDecorator do
 
   describe 'here correct_name of me' do
     it 'here capitalizes the name of osama' do
-      expect(subject.correct_name).to eq('osamas ashraf')
+      expect(subject.correct_name).to eq('Osama ashraf')
     end
   end
 end
