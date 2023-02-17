@@ -1,46 +1,25 @@
+# here i call the class nameable because the person will inherit from it
 require_relative 'nameable'
 
 class Person < Nameable
-  attr_reader :id, :age
-  attr_accessor :name
-
-  def initialize(age, parent_permission=true, name="Unknown")
-    @id = Random.rand(1..1000)
+  attr_accessor :name, :age, :rentals, :parent_permission
+  attr_reader :id
+  def initialize(id, age, name = 'unknown', parent_permission: true)
+    super()
+    @id = id
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
   end
 
-  def is_of_age?
-    @age.to_i >= 18
+  def of_age?
+    @age >= 18
   end
+
+  private :of_age?
 
   def can_use_services?
-    is_of_age? || @parent_permission
-  end
-
-  def correct_name
-    @name
-  end
-
-
-  def rent_book(book, date)
-    rental = Rental.new(self, book, date)
-    @rentals << rental
-    book.rentals << rental
-    rental
-  end
-
-  def return_book(rental, date)
-    rental.return_date = date
-  end
-
-  def rented_books
-    @rentals.map { |rental| rental.book }
-  end
-
-  def late_rentals
-    @rentals.select { |rental| rental.return_date.nil? && Date.today > rental.date + 7 }
+    @age >= 18 || @parent_permission
   end
 end
-
