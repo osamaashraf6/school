@@ -1,6 +1,5 @@
 require_relative '.././teacher'
 require_relative '.././person'
-require 'yaml'
 
 describe Teacher do
   before :each do

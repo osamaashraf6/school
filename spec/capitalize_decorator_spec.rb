@@ -1,4 +1,4 @@
-require_relative '.././capitalizeDecorator'
+require_relative '.././capitalize_decorator'
 # ======ds===========fd===========
 
 RSpec.describe CapitalizeDecorator do

@@ -1,4 +1,4 @@
-require_relative '.././trimmerDecorator'
+require_relative '.././trimmer_decorator'
 
 RSpec.describe TrimmerDecorator do
   describe 'here is the correctname' do

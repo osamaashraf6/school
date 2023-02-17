@@ -1,0 +1,4 @@
+trimmer_decorator
+class_room
+capitalize_decorator
+base_decorator

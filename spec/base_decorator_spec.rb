@@ -1,5 +1,5 @@
 # import the class
-require_relative '.././baseDecorator'
+require_relative '.././base_decorator'
 
 RSpec.describe BaseDecorator do
   describe '#here I will correct correct the name' do

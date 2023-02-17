@@ -1,4 +1,4 @@
-require_relative '.././classRoom'
+require_relative '.././class_room'
 
 describe Classroom do
   before :each do

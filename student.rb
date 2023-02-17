@@ -1,6 +1,6 @@
 # here is the calling of the classes
 require_relative 'person'
-require_relative 'classRoom'
+require_relative 'class_room'
 
 class Student < Person
   attr_reader :classroom
